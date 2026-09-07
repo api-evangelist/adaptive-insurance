@@ -1,0 +1,60 @@
+generated: '2026-09-07'
+method: probed
+source: https://auth.adaptiveinsurance.com/.well-known/openid-configuration
+scope_note: >-
+  Adaptive Insurance publishes no public developer API and no API authentication guide.
+  What it DOES publish machine-readably is the OpenID Connect / RFC 8414 discovery
+  document for its own identity tenant at auth.adaptiveinsurance.com — an Auth0 custom
+  domain whose issuer is the company's own host. That tenant fronts the agent/broker
+  portal at app.adaptiveinsurance.com and the application backend at
+  api.adaptiveinsurance.com. This profile records that identity surface as probed; it is
+  NOT a published API authentication reference, and nothing here was derived from a
+  specification, because the company publishes none.
+summary:
+  types: [openIdConnect, oauth2]
+  api_key_in: []
+  oauth2_flows: [authorizationCode, clientCredentials, refreshToken, deviceCode, tokenExchange, implicit, password]
+  pkce: true
+  pkce_methods: [S256, plain]
+  mtls_bound_tokens: true
+  dpop: true
+  dpop_algs: [ES256]
+  mfa: true
+  dynamic_client_registration: true
+schemes:
+  - name: adaptive-auth0-tenant
+    type: openIdConnect
+    openIdConnectUrl: https://auth.adaptiveinsurance.com/.well-known/openid-configuration
+    issuer: https://auth.adaptiveinsurance.com/
+    provider: Auth0 (custom domain)
+    endpoints:
+      authorization: https://auth.adaptiveinsurance.com/authorize
+      token: https://auth.adaptiveinsurance.com/oauth/token
+      userinfo: https://auth.adaptiveinsurance.com/userinfo
+      jwks: https://auth.adaptiveinsurance.com/.well-known/jwks.json
+      revocation: https://auth.adaptiveinsurance.com/oauth/revoke
+      end_session: https://auth.adaptiveinsurance.com/oidc/logout
+      device_authorization: https://auth.adaptiveinsurance.com/oauth/device/code
+      backchannel_authentication: https://auth.adaptiveinsurance.com/bc-authorize
+      registration: https://auth.adaptiveinsurance.com/oidc/register
+      mfa_challenge: https://auth.adaptiveinsurance.com/mfa/challenge
+    token_endpoint_auth_methods:
+      - client_secret_basic
+      - client_secret_post
+      - private_key_jwt
+      - tls_client_auth
+      - self_signed_tls_client_auth
+      - none
+    id_token_signing_algs: [HS256, RS256, PS256]
+    sources: ['well-known/adaptive-insurance-openid-configuration.json']
+consumer_surfaces:
+  - surface: agent and broker portal
+    url: https://app.adaptiveinsurance.com/
+    signup: https://app.adaptiveinsurance.com/registration
+    auth: Auth0 universal login at https://auth.adaptiveinsurance.com/u/login
+  - surface: application backend
+    url: https://api.adaptiveinsurance.com/
+    note: >-
+      Live and reachable, answers with a JSON 404 envelope on every probed path. No
+      published specification, no /docs, no /openapi.json, no discovery document.
+      Treated as the portal's private backend, not a developer API.

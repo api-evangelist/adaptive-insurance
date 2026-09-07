@@ -1,0 +1,14 @@
+generated: '2026-09-07'
+method: searched
+source: https://www.adaptiveinsurance.com/
+limit_count: 0
+note: >-
+  No rate limits are published, because no public API is published. The one live
+  programmable host, api.adaptiveinsurance.com, returns no RateLimit-*, X-RateLimit-* or
+  Retry-After header on an anonymous request and carries no documentation. Recorded as an
+  honest zero rather than omitted.
+evidence:
+  - {url: 'https://api.adaptiveinsurance.com/', status: 404, finding: 'JSON 404 envelope, no rate-limit response headers observed'}
+  - {url: 'https://www.adaptiveinsurance.com/sitemap.xml', status: 200, finding: 'no developer or API documentation page exists to state limits'}
+limits: []
+headers: []

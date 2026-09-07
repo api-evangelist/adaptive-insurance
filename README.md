@@ -64,5 +64,15 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Adaptive Insurance is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Adaptive Insurance is an Austin, Texas managing general agent and insurtech platform (founded 2024)
+writing parametric and specialty coverage for climate and weather risk in the United States —
+GridProtect parametric power-outage coverage, wind/hail deductible buy-backs, residential flood,
+equipment breakdown, and Restaurant Recovery. Distribution is through appointed agents and brokers
+and through embedded partner arrangements.
+
+Adaptive publishes no public developer program: no developer portal, no API reference, and no
+machine-readable specification. It does serve an `llms.txt` on its marketing host and OpenID Connect
+/ RFC 8414 discovery documents from its own identity tenant, and those are what this profile
+harvested. See `x-coverage` in `apis.yml` for the probe evidence.
+
+- https://www.adaptiveinsurance.com/

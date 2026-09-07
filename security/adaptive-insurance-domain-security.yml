@@ -1,0 +1,42 @@
+generated: '2026-09-07'
+method: probed
+source: >-
+  live DNS/TLS/HTTP probes of apis.yml hosts (probe-domain-security.py), extended by hand
+  with the identity, portal and application-backend hosts found during contract discovery
+hosts:
+- host: www.adaptiveinsurance.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 28 23:21:28 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: auth.adaptiveinsurance.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 25 00:28:41 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+  note: Auth0 custom-domain identity tenant; serves the OIDC and RFC 8414 discovery documents
+- host: api.adaptiveinsurance.com
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Mar  6 23:59:59 2027 GMT
+  hsts: true
+  hsts_max_age: 31536000
+  note: >-
+    Application backend. Sends helmet-style hardening headers (CSP default-src 'self',
+    COOP/CORP same-origin, X-Content-Type-Options nosniff, X-Frame-Options SAMEORIGIN).
+    Negotiated TLS 1.2 only on probe.
+- host: app.adaptiveinsurance.com
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Mar  6 23:59:59 2027 GMT
+  hsts: false
+  note: Agent and broker portal single-page app; no Strict-Transport-Security header observed
+domains:
+- domain: adaptiveinsurance.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

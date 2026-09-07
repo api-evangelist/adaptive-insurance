@@ -1,0 +1,30 @@
+# Adaptive Insurance
+
+> Adaptive Insurance is a specialty MGA and insurtech platform offering parametric and specialty insurance for climate and weather risk in the United States. Products cover power outages, wind and hail deductible exposure, and residential flood. Policies are quoted and bound through agents and brokers, typically in under five minutes.
+
+## Products
+
+- [GridProtect Power Outage Coverage](https://www.adaptiveinsurance.com/product/gridprotect-power-outage-coverage): Parametric power outage insurance that pays automatically when the grid goes down, typically within days.
+- [Wind-Hail Deductible Buy-Back - Commercial](https://www.adaptiveinsurance.com/product/wind-hail-deductible-buy-back-commercial): Reduces business out-of-pocket wind and hail deductible exposure, buy down to as low as $5K. Available in all 50 states.
+- [Wind-Hail Deductible Buy-Back - Residential](https://www.adaptiveinsurance.com/product/wind-hail-deductible-buy-back-residential): Reduces homeowner out-of-pocket wind and hail deductible exposure, buy down to as low as $2,500. Available in all 50 states.
+
+## Who We Help
+
+- [Agents and Brokers](https://www.adaptiveinsurance.com/who-we-help/agents-and-brokers): Quote, bind and issue specialty policies in under five minutes, with competitive commissions.
+- [Businesses](https://www.adaptiveinsurance.com/who-we-help/businesses): Specialty business interruption coverage for power outages, wind and hail damage and equipment failures.
+- [Residential](https://www.adaptiveinsurance.com/who-we-help/residential): Specialty policies that fill the gaps left by standard homeowners coverage.
+- [Partners](https://www.adaptiveinsurance.com/who-we-help/partners): Embedded insurance and white label solutions for B2B partners.
+
+## Resources
+
+- [Blog](https://www.adaptiveinsurance.com/blog): Articles on climate risk, parametric insurance and specialty coverage.
+- [What Is Parametric Insurance and How Does It Fill the Gaps in Your Coverage?](https://www.adaptiveinsurance.com/blog/what-is-parametric-insurance-and-how-does-it-fill-the-gaps-in-your-coverage)
+- [The U.S. Power Grid Is Changing - Here's What It Means for Your Business](https://www.adaptiveinsurance.com/blog/the-u-s-power-grid-is-changing---heres-what-it-means-for-your-business)
+- [What Is GridProtect and How Can It Keep Your Business Moving?](https://www.adaptiveinsurance.com/blog/what-is-gridprotect-and-how-can-it-keep-your-business-moving)
+- [What Does Residential Flood Insurance Cover, and When Might NFIP Not Be Enough?](https://www.adaptiveinsurance.com/blog/what-does-residential-flood-insurance-cover-and-when-might-nfip-not-be-enough)
+
+## Company
+
+- [About](https://www.adaptiveinsurance.com/about): Adaptive Insurance is a specialty MGA and insurtech platform built to fill gaps left by traditional insurance.
+- [Contact](https://www.adaptiveinsurance.com/contact)
+- [State Insurance License Numbers](https://www.adaptiveinsurance.com/license-numbers)

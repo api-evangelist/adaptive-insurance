@@ -1,0 +1,101 @@
+generated: '2026-09-07'
+method: probed
+source: >-
+  Live probe of the named /.well-known/ path list against every host the record knows
+  (registrable domain + www, the agent-portal host, the Auth0 identity host, and the
+  api.adaptiveinsurance.com application backend).
+path_echo_control: passed
+notes: >-
+  Only auth.adaptiveinsurance.com serves real discovery documents: it is Adaptive
+  Insurance's own Auth0 custom-domain tenant, and both the OIDC and RFC 8414 documents
+  it returns carry issuer https://auth.adaptiveinsurance.com/ — the company's own host.
+  The marketing site (Webflow) and the agent portal (SPA) return HTML 404s on every path,
+  and api.adaptiveinsurance.com returns honest JSON 404s ("Cannot GET ...") on every path.
+hosts:
+  - host: https://adaptiveinsurance.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /apis.yml, status: 404}
+      - {path: /.well-known/aauth-resource.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/adaptive-insurance-negative-control-7f3ab91c.json, status: 404}
+  - host: https://www.adaptiveinsurance.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /apis.yml, status: 404}
+      - {path: /.well-known/aauth-resource.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/adaptive-insurance-negative-control-7f3ab91c.json, status: 404}
+  - host: https://auth.adaptiveinsurance.com
+    documents:
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: adaptive-insurance-openid-configuration.json
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: adaptive-insurance-oauth-authorization-server.json
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /apis.yml, status: 404}
+      - {path: /.well-known/aauth-resource.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/adaptive-insurance-negative-control-7f3ab91c.json, status: 404}
+  - host: https://app.adaptiveinsurance.com
+    note: >-
+      Single-page-app catch-all — every path returns a 404 status with the same ~4.2KB
+      HTML shell. No documents recorded.
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /apis.yml, status: 404}
+      - {path: /.well-known/aauth-resource.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/adaptive-insurance-negative-control-7f3ab91c.json, status: 404}
+  - host: https://api.adaptiveinsurance.com
+    note: >-
+      Live application backend (Express/Nest-shaped JSON 404 envelope,
+      {"message":"Cannot GET /...","error":"Not Found","statusCode":404}). It answers,
+      but publishes no discovery document and no specification.
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /apis.yml, status: 404}
+      - {path: /.well-known/aauth-resource.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/adaptive-insurance-negative-control-7f3ab91c.json, status: 404}
+hit_count: 2

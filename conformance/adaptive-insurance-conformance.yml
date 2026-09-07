@@ -1,0 +1,63 @@
+generated: '2026-09-07'
+method: probed
+source: https://auth.adaptiveinsurance.com/.well-known/openid-configuration
+note: >-
+  Every assertion below is read from a document that was actually fetched. Adaptive
+  Insurance publishes no OpenAPI, AsyncAPI, GraphQL SDL or public API reference, so no
+  standard is asserted from a specification — only from the identity tenant's own
+  discovery document and from live probes of the company's hosts.
+standards:
+  - id: oidc-discovery
+    name: OpenID Connect Discovery 1.0
+    conforms: true
+    evidence: https://auth.adaptiveinsurance.com/.well-known/openid-configuration returned 200 with issuer, jwks_uri and authorization/token endpoints
+  - id: rfc8414-oauth-authorization-server-metadata
+    name: RFC 8414 OAuth 2.0 Authorization Server Metadata
+    conforms: true
+    evidence: https://auth.adaptiveinsurance.com/.well-known/oauth-authorization-server returned 200 with the same issuer metadata
+  - id: oauth2
+    name: OAuth 2.0
+    conforms: true
+    evidence: grant_types_supported includes authorization_code, client_credentials, refresh_token and device_code
+  - id: rfc7636-pkce
+    name: RFC 7636 PKCE
+    conforms: true
+    evidence: code_challenge_methods_supported includes S256
+  - id: rfc8705-mtls-bound-tokens
+    name: RFC 8705 mutual-TLS client authentication and certificate-bound access tokens
+    conforms: true
+    evidence: tls_client_certificate_bound_access_tokens is true; token_endpoint_auth_methods_supported includes tls_client_auth
+  - id: rfc9449-dpop
+    name: RFC 9449 DPoP
+    conforms: true
+    evidence: dpop_signing_alg_values_supported is ['ES256']
+  - id: rfc7591-dynamic-client-registration
+    name: RFC 7591 Dynamic Client Registration
+    conforms: true
+    evidence: registration_endpoint is published at https://auth.adaptiveinsurance.com/oidc/register
+  - id: rfc9116-security-txt
+    name: RFC 9116 security.txt
+    conforms: false
+    evidence: /.well-known/security.txt returned 404 on all five probed hosts
+  - id: apis-json
+    name: APIs.json
+    conforms: false
+    evidence: /apis.json, /apis.yml and /.well-known/apis.json returned 404 on all five probed hosts
+  - id: openapi
+    name: OpenAPI
+    conforms: false
+    evidence: no OpenAPI at any probed path on api.adaptiveinsurance.com, the marketing host or the portal host
+  - id: llmstxt
+    name: llms.txt
+    conforms: true
+    evidence: https://www.adaptiveinsurance.com/llms.txt returned 200 with a structured llms.txt document
+domain_standards:
+  - id: acord
+    name: ACORD standards (AL3, XML, NGDS) for insurance data interchange
+    conforms: unknown
+    evidence: >-
+      No ACORD, AL3, NGDS, or download-standard claim appears anywhere on the public site,
+      and there is no contract to inspect for one. Adaptive distributes through agents and
+      brokers and through embedded partners arranged by contract; whether an ACORD-shaped
+      exchange exists behind those agreements is not publicly stated. Reward-only check —
+      recorded as unknown, not as a failure.

@@ -1,0 +1,37 @@
+generated: '2026-09-07'
+method: probed
+source: https://auth.adaptiveinsurance.com/.well-known/openid-configuration
+note: >-
+  These are the scopes the Adaptive Insurance identity tenant advertises in its own
+  OIDC discovery document. They are the standard OpenID Connect claim scopes exposed by
+  the tenant, not a documented API permission model — Adaptive publishes no public API
+  and no scope/permission reference page. Recorded because they were fetched, not
+  because they constitute an authorization contract for third-party integrators.
+schemes:
+  - name: adaptive-auth0-tenant
+    source: well-known/adaptive-insurance-openid-configuration.json
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://auth.adaptiveinsurance.com/authorize
+        tokenUrl: https://auth.adaptiveinsurance.com/oauth/token
+      - flow: clientCredentials
+        tokenUrl: https://auth.adaptiveinsurance.com/oauth/token
+      - flow: deviceCode
+        deviceAuthorizationUrl: https://auth.adaptiveinsurance.com/oauth/device/code
+        tokenUrl: https://auth.adaptiveinsurance.com/oauth/token
+scopes:
+  - {scope: openid, description: 'OpenID Connect authentication; issues an ID token', standard: true}
+  - {scope: profile, description: 'Basic profile claims', standard: true}
+  - {scope: offline_access, description: 'Issue a refresh token', standard: true}
+  - {scope: name, description: 'Full name claim', standard: true}
+  - {scope: given_name, description: 'Given name claim', standard: true}
+  - {scope: family_name, description: 'Family name claim', standard: true}
+  - {scope: nickname, description: 'Nickname claim', standard: true}
+  - {scope: email, description: 'Email address claim', standard: true}
+  - {scope: email_verified, description: 'Email verification status claim', standard: true}
+  - {scope: picture, description: 'Profile picture claim', standard: true}
+  - {scope: created_at, description: 'Account creation timestamp claim', standard: false}
+  - {scope: identities, description: 'Linked identity provider records', standard: false}
+  - {scope: phone, description: 'Phone number claim', standard: true}
+  - {scope: address, description: 'Address claim', standard: true}
+scope_count: 14

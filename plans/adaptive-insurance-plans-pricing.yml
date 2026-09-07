@@ -1,0 +1,17 @@
+generated: '2026-09-07'
+method: searched
+source: https://www.adaptiveinsurance.com/
+plan_count: 0
+note: >-
+  Adaptive Insurance publishes no pricing page and no API plans. It is a managing general
+  agent: coverage is quoted and bound per risk by appointed agents and brokers inside the
+  portal at app.adaptiveinsurance.com, and partner/embedded arrangements are negotiated
+  through the contact form. The sitemap carries no /pricing or /plans page, the product
+  pages state coverage terms (for example deductible buy-downs "as low as $2,500"
+  residential and "as low as $5K" commercial) rather than a price, and there is no
+  developer tier of any kind because there is no public API to meter.
+evidence:
+  - {url: 'https://www.adaptiveinsurance.com/sitemap.xml', status: 200, finding: 'no pricing or plans URL among the 24 listed pages'}
+  - {url: 'https://www.adaptiveinsurance.com/who-we-help/agents-and-brokers', status: 200, finding: 'quote-and-bind through appointment, no published rate table'}
+  - {url: 'https://www.adaptiveinsurance.com/who-we-help/partners', status: 200, finding: 'embedded and white-label arrangements via "Contact Us"'}
+plans: []

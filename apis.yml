@@ -1,17 +1,36 @@
 aid: adaptive-insurance
 name: Adaptive Insurance
-description: 'Adaptive Insurance is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Adaptive Insurance is an Austin, Texas managing general agent and insurtech platform
+  founded in 2024 by former Hippo executives Mike Gulla and Arik Yelovitch, writing
+  parametric and specialty coverage for climate and weather risk in the United States.
+  Its flagship product, GridProtect, is a parametric power-outage policy that pays
+  automatically on a verified third-party outage trigger, typically within days; the
+  portfolio also includes residential and commercial wind/hail deductible buy-backs,
+  standalone residential flood coverage, equipment breakdown, and a Restaurant Recovery
+  product offered by Tokio Marine HCC and powered by Adaptive. Distribution runs through
+  appointed agents and brokers who quote, bind and issue online in under five minutes in
+  a portal backed by the company's own identity tenant, plus embedded and white-label
+  partner arrangements. Adaptive publishes no public developer program - no portal,
+  reference, or machine-readable specification - so this profile records the identity and
+  discovery surface it does serve.
+image: https://cdn.prod.website-files.com/660ca8f281e9a5dfc19bc069/67190ebfbdd7ffc32579f220_favicon.svg
 url: https://raw.githubusercontent.com/api-evangelist/adaptive-insurance/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-09-07'
 modified: '2026-09-07'
 tags:
-- Company
+- Insurance
+- Insurtech
+- Parametric Insurance
+- Specialty Insurance
+- Climate Risk
+- Weather Data
+- Managing General Agent
+- Flood
+- Power Outage
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +38,61 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/adaptive-insurance-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.adaptiveinsurance.com/
+- type: Blog
+  url: https://www.adaptiveinsurance.com/blog
+- type: Support
+  url: https://www.adaptiveinsurance.com/contact
+- type: SignUp
+  url: https://app.adaptiveinsurance.com/registration
+- type: Login
+  url: https://app.adaptiveinsurance.com/
+- type: TermsOfService
+  url: https://www.adaptiveinsurance.com/terms-conditions
+- type: PrivacyPolicy
+  url: https://www.adaptiveinsurance.com/privacy-policy
+- type: LLMsTxt
+  url: llms/adaptive-insurance-llms.txt
+- type: WellKnown
+  url: well-known/adaptive-insurance-well-known.yml
+- type: Authentication
+  url: authentication/adaptive-insurance-authentication.yml
+- type: OAuthScopes
+  url: scopes/adaptive-insurance-scopes.yml
+- type: Conformance
+  url: conformance/adaptive-insurance-conformance.yml
+- type: Plans
+  url: plans/adaptive-insurance-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/adaptive-insurance-rate-limits.yml
+- type: DomainSecurity
+  url: security/adaptive-insurance-domain-security.yml
+x-enrichment:
+  date: '2026-09-07'
+  status: minimal
+  artifacts_added: 10
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Adaptive Insurance runs a live application backend at api.adaptiveinsurance.com that
+    answers only its own agent portal - every probed path returns the same JSON 404
+    envelope and there is no /docs, /openapi.json or discovery document - and the public
+    site never uses the word API, offering embedded and white-label partnership only
+    through a contact form.
+  evidence:
+    - url: https://api.adaptiveinsurance.com/openapi.json
+      status: 404
+    - url: https://api.adaptiveinsurance.com/docs
+      status: 404
+    - url: https://www.adaptiveinsurance.com/sitemap.xml
+      status: 200
+    - url: https://www.adaptiveinsurance.com/llms.txt
+      status: 200
+    - url: https://auth.adaptiveinsurance.com/.well-known/openid-configuration
+      status: 200
+  checked: '2026-09-07'
